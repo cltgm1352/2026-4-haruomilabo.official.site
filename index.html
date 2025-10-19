@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>2026-4｜HARUOMILABO OFFICIAL SITE</title>
+  <link rel="icon" href="1_logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 全体スタイル */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a); /* 黒系グラデ背景 */
+      color: white;
+      text-align: center;
+    }
+
+    /* セクション1 */
+    .section-1 {
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .fade-img {
+      width: 80%;
+      max-width: 600px;
+      opacity: 0;
+      transform: translateY(0px);
+      transition: opacity 2s ease, transform 2s ease;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .fade-img.visible {
+      opacity: 1;
+    }
+
+    .fade-img.moved {
+      transform: translateY(-20px);
+    }
+
+    .appear-text {
+      margin-top: 20px;
+      font-size: 1.8em;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .appear-text.visible {
+      opacity: 1;
+    }
+
+    /* セクション2 */
+    .section-2 {
+      padding: 60px 20px;
+      background: #111;
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .link-list li {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .link-list img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .link-list a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .link-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- セクション1 -->
+  <section class="section-1">
+    <img src="1_img.png" alt="メイン画像" class="fade-img" id="mainImage">
+    <div class="appear-text" id="mainText">2026年4月公開！</div>
+  </section>
+
+  <!-- セクション2 -->
+  <section class="section-2">
+    <h2>リンク一覧</h2>
+    <ul class="link-list">
+      <li>
+        <img src="HARUOMILABOオフィシャルサイトLogo.png" alt="Official Logo">
+        <a href="https://www.haruomilabo.com" target="_blank">OFFICIAL HP</a>
+      </li>
+      <li>
+        <img src="noimg_siet.png" alt="1st ANNIV">
+        <a href="https://www.haruomilabo.com/haruoilabo1st-anniversary" target="_blank">1st ANNIVERSARY 特設サイト</a>
+      </li>
+      <li>
+        <img src="noimg_siet.png" alt="恐竜ゲーム">
+        <a href="https://www.haruomilabo.com/new-dinosaurgame" target="_blank">恐竜ゲーム</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- スクリプトでアニメーション処理 -->
+  <script>
+    window.addEventListener('load', () => {
+      const img = document.getElementById('mainImage');
+      const text = document.getElementById('mainText');
+
+      // Step 1: フェードイン
+      setTimeout(() => {
+        img.classList.add('visible');
+      }, 100);
+
+      // Step 2: 上にスライド
+      setTimeout(() => {
+        img.classList.add('moved');
+      }, 2000);
+
+      // Step 3: テキスト表示
+      setTimeout(() => {
+        text.classList.add('visible');
+      }, 2500);
+    });
+  </script>
+
+</body>
+</html>
