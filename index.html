@@ -17,18 +17,22 @@
     }
 
     .section-1 {
-      padding: 100px 20px;
-      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
 
     .fade-img {
-      width: 80%;
-      max-width: 600px;
+      width: 40%;
+      max-width: 300px;
       opacity: 0;
       transform: translateY(0px);
       transition: opacity 2s ease, transform 2s ease;
-      margin: 0 auto;
-      display: block;
+      margin-bottom: 30px;
     }
 
     .fade-img.visible {
@@ -40,8 +44,7 @@
     }
 
     .appear-text {
-      margin-top: 30px;
-      font-size: 3em;
+      font-size: 4em;
       font-weight: 900;
       opacity: 0;
       transition: opacity 1.5s ease;
@@ -151,15 +154,12 @@
     window.addEventListener('load', () => {
       const img = document.getElementById('mainImage');
       const text = document.getElementById('mainText');
-
       setTimeout(() => {
         img.classList.add('visible');
       }, 100);
-
       setTimeout(() => {
         img.classList.add('moved');
       }, 2000);
-
       setTimeout(() => {
         text.classList.add('visible');
       }, 2500);
