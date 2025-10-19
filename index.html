@@ -2,20 +2,20 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>2026-4｜HARUOMILABO OFFICIAL SITE</title>
+  <title>2026年4月公開！｜HARUOMILABO OFFICIAL SITE</title>
   <link rel="icon" href="1_logo.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* 全体スタイル */
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom, #000000, #1a1a1a); /* 黒系グラデ背景 */
+      font-family: 'Orbitron', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
       color: white;
       text-align: center;
+      font-weight: 500;
     }
 
-    /* セクション1 */
     .section-1 {
       padding: 100px 20px;
       position: relative;
@@ -40,8 +40,9 @@
     }
 
     .appear-text {
-      margin-top: 20px;
-      font-size: 1.8em;
+      margin-top: 30px;
+      font-size: 3em;
+      font-weight: 900;
       opacity: 0;
       transition: opacity 1.5s ease;
     }
@@ -50,10 +51,14 @@
       opacity: 1;
     }
 
-    /* セクション2 */
     .section-2 {
       padding: 60px 20px;
       background: #111;
+    }
+
+    .section-2 h2 {
+      font-size: 2em;
+      font-weight: 700;
     }
 
     .link-list {
@@ -83,22 +88,47 @@
       color: #fff;
       text-decoration: none;
       font-size: 1.1em;
+      font-weight: 600;
     }
 
     .link-list a:hover {
       text-decoration: underline;
     }
+
+    ::-webkit-scrollbar {
+      height: 10px;
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #111;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(145deg, #333, #555);
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(145deg, #555, #777);
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    * {
+      scrollbar-color: #444 #111;
+      scrollbar-width: thin;
+    }
   </style>
 </head>
 <body>
 
-  <!-- セクション1 -->
   <section class="section-1">
     <img src="1_img.png" alt="メイン画像" class="fade-img" id="mainImage">
     <div class="appear-text" id="mainText">2026年4月公開！</div>
   </section>
 
-  <!-- セクション2 -->
   <section class="section-2">
     <h2>リンク一覧</h2>
     <ul class="link-list">
@@ -117,23 +147,19 @@
     </ul>
   </section>
 
-  <!-- スクリプトでアニメーション処理 -->
   <script>
     window.addEventListener('load', () => {
       const img = document.getElementById('mainImage');
       const text = document.getElementById('mainText');
 
-      // Step 1: フェードイン
       setTimeout(() => {
         img.classList.add('visible');
       }, 100);
 
-      // Step 2: 上にスライド
       setTimeout(() => {
         img.classList.add('moved');
       }, 2000);
 
-      // Step 3: テキスト表示
       setTimeout(() => {
         text.classList.add('visible');
       }, 2500);
